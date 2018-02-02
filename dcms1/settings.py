@@ -138,7 +138,7 @@ INSTALLED_APPS = (
     'djangocms_snippet',
     'djangocms_googlemap',
     'djangocms_video',
-     'storages',
+    'storages',
     'dcms1'
 )
 

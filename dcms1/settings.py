@@ -198,10 +198,10 @@ THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.filters'
 )
 
-AWS_STORAGE_BUCKET_NAME = 'dcm1.com'
+AWS_STORAGE_BUCKET_NAME = 'dcms-bucket'
 
-AWS_ACCESS_KEY_ID = 'AKIAJRMOV5FM5AU2VJ3Q'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = 'AKIAIZXE6N74RDWUZBCQ'
+AWS_SECRET_ACCESS_KEY = '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'
 
 # Tell django-storages the domain to use to refer to static files.
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME

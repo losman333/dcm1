@@ -133,7 +133,7 @@ INSTALLED_APPS = (
     'aldryn_apphooks_config',
     'aldryn_categories',
     'aldryn_common',
-    'aldryn_newsblog',
+                  #'aldryn_newsblog',
     'aldryn_people',
     'aldryn_translation_tools',
     'parler',
@@ -186,6 +186,16 @@ CMS_PERMISSION = True
 CMS_PLACEHOLDER_CONF = {}
 
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
+        'PORT': config('DB_PORT'),
+}
+}
 
 MIGRATION_MODULES = {
     
@@ -217,4 +227,5 @@ DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES = { 'default': dj_database_url.config() }
+DATABASES['default'].update(db_from_env)
+

@@ -114,15 +114,7 @@ MIDDLEWARE = (
 )
 
 INSTALLED_APPS = (
-    'djangocms_admin_style',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.admin',
-    'django.contrib.sites',
-    'django.contrib.sitemaps',
-    'django.contrib.staticfiles',
-    'django.contrib.messages',
+    
     'cms',
     'menus',
     'sekizai',
@@ -133,7 +125,7 @@ INSTALLED_APPS = (
     'aldryn_apphooks_config',
     'aldryn_categories',
     'aldryn_common',
-                  #'aldryn_newsblog',
+    'aldryn_newsblog',
     'aldryn_people',
     'aldryn_translation_tools',
     'parler',
@@ -147,7 +139,16 @@ INSTALLED_APPS = (
     'djangocms_snippet',
     'djangocms_googlemap',
     'djangocms_video',
-    'storages',
+                  'storages',
+                  'djangocms_admin_style',
+                  'django.contrib.auth',
+                  'django.contrib.contenttypes',
+                  'django.contrib.sessions',
+                  'django.contrib.admin',
+                  'django.contrib.sites',
+                  'django.contrib.sitemaps',
+                  'django.contrib.staticfiles',
+                  'django.contrib.messages',
     'dcms1'
 )
 
@@ -218,6 +219,7 @@ AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
 # Tell the staticfiles app to use S3Boto3 storage when writing the collected static files (when
 # you run `collectstatic`).
+STATIC_URL = "https://%s/%s/" % (AWS_STORAGE_BUCKET_NAME, STATICFILES_LOCATION)
 STATICFILES_LOCATION = 'static'
 STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 

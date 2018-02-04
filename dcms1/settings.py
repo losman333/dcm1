@@ -219,7 +219,7 @@ AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
 # Tell the staticfiles app to use S3Boto3 storage when writing the collected static files (when
 # you run `collectstatic`).
-STATIC_URL = "https://%s/%s/" % (AWS_STORAGE_BUCKET_NAME, STATICFILES_LOCATION)
+STATIC_URL = "https://%s/%s/" % (AWS_STORAGE_BUCKET_NAME, STATICFILES_STORAGE)
 STATICFILES_LOCATION = 'static'
 STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 

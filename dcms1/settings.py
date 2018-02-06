@@ -119,7 +119,6 @@ INSTALLED_APPS = (
     'menus',
     'sekizai',
     'treebeard',
-    'djangocms_text_ckeditor',
     'filer',
     'easy_thumbnails',
     'aldryn_apphooks_config',

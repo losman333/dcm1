@@ -150,7 +150,7 @@ INSTALLED_APPS = (
                   'django.contrib.sitemaps',
                   'django.contrib.staticfiles',
                   'django.contrib.messages',
-    'dcms1'
+    'dcms1',
 )
 
 LANGUAGES = (

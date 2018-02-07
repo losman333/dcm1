@@ -2,7 +2,6 @@ aldryn-apphooks-config==0.3.3
 aldryn-boilerplates==0.7.5
 aldryn-categories==1.1.0
 aldryn-common==1.0.4
-aldryn-newsblog==2.0.0
 aldryn-people==2.1.0
 aldryn-translation-tools==0.2.1
 awscli==1.14.32
@@ -38,7 +37,7 @@ djangocms-link==2.1.2
 djangocms-picture==2.0.6
 djangocms-snippet==2.0.0
 djangocms-style==2.0.2
-djangocms-text-ckeditor==3.4.0
+djangocms-text-ckeditor==3.5.3
 djangocms-video==2.0.4
 docutils==0.14
 easy-thumbnails==2.4.2

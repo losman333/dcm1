@@ -46,6 +46,10 @@ ROOT_URLCONF = 'dcms1.urls'
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
 LANGUAGE_CODE = 'en'
+LANGUAGES = [
+             ('en', 'English'),
+             
+             ]
 
 TIME_ZONE = 'US/Pacific'
 
@@ -74,26 +78,22 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': ['templates'],
-
+        'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'cms.context_processors.cms_settings',
+                'sekizai.context_processors.sekizai',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.i18n',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.template.context_processors.media',
-                'django.template.context_processors.csrf',
-                'django.template.context_processors.tz',
-                'sekizai.context_processors.sekizai',
-                'django.template.context_processors.static',
-                'cms.context_processors.cms_settings'
+              
+               
+                
             ],
-            'loaders': [
-                'django.template.loaders.filesystem.Loader',
-                'django.template.loaders.app_directories.Loader',
-                'django.template.loaders.eggs.Loader'
-            ],
+           
         },
     },
 ]
@@ -121,15 +121,9 @@ INSTALLED_APPS = (
     'menus',
     'sekizai',
     'treebeard',
-    'djangocms_text_ckeditor',
     'filer',
     'easy_thumbnails',
-    'aldryn_apphooks_config',
-    'aldryn_categories',
-    'aldryn_common',
-    'aldryn_newsblog',
-    'aldryn_people',
-    'aldryn_translation_tools',
+   'djangocms_text_ckeditor',
     'parler',
     'sortedm2m',
     'taggit',
@@ -159,23 +153,7 @@ LANGUAGES = (
     ('en', gettext('en')),
 )
 
-CMS_LANGUAGES = {
-    ## Customize this
-    'default': {
-        'public': True,
-        'hide_untranslated': False,
-        'redirect_on_fallback': True,
-    },
-    1: [
-        {
-            'public': True,
-            'code': 'en',
-            'hide_untranslated': False,
-            'name': gettext('en'),
-            'redirect_on_fallback': True,
-        },
-    ],
-}
+
 
 CMS_TEMPLATES = (
     ## Customize this
@@ -184,9 +162,7 @@ CMS_TEMPLATES = (
     ('sidebar_right.html', 'Sidebar Right')
 )
 
-CMS_PERMISSION = True
 
-CMS_PLACEHOLDER_CONF = {}
 
 
 DATABASES = {
@@ -200,9 +176,7 @@ DATABASES = {
 }
 }
 
-MIGRATION_MODULES = {
-    
-}
+
 
 THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.colorspace',
